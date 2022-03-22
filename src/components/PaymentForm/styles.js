@@ -24,13 +24,24 @@ export const MethodsOption = styled.div`
     padding: 1.2rem;
     border-radius: 5px;
     gap: 0.3rem;
-
-
-    &:hover{
-        border: 1px solid ${theme.primary};
-    }
 `;
 
+export const Title = styled.label`
+    font-size: 1em;
+    font-weight: bold ;
+`;
+
+export const HeaderLabel = styled.p`
+    font-size: .8em;
+`;
+
+export const InputOption = styled.input`
+   -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;    
+    -ms-appearance: checkbox;  
+    /* width: 15px;
+    height: 15px; */
+`;
 
 export const InputWrapper = styled.form`
     padding: 10px 0;
@@ -45,14 +56,48 @@ export const Label = styled.label`
 
 
 export const Input = styled.input`
-    padding: 12px;
+    padding: 10px;
     background: ${theme.defaultGrey};
-    font-size: 12px;
+    font-size: 0.8em;
     border-radius: 5px;
     border: 1px solid ${theme.primary};
 `;
 
 export const CodeArea = styled.div`
+    width: 100%;
     display: flex;
     gap: 3rem;
+`;
+
+export const DivPix = styled.div`
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.2rem;
+`;
+
+export const CartReview = styled.div`
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+    margin-bottom: 10px;
+`;
+
+export const ImageQrCode = styled.img`
+    width: 200px;
+    object-fit: cover;
+`;
+
+export const CopyButton = styled.button`
+    background-color: ${theme.primary};
+    padding: 15px 65px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: ${theme.defaultGrey};
+    cursor: pointer;
 `;
