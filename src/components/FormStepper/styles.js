@@ -4,21 +4,30 @@ import background from '../../assets/imgs/banner.svg'
 
 export const Wrapper = styled.section`
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    position: absolute;
     display: flex;
     padding: 1rem 0;
     justify-content: center;
     background-color: ${theme.defaultPurple};
+
+    @media screen and (max-width: 490px){
+        padding: 0;
+    }
 `;
 
 export const Container = styled.section`
     background: ${theme.defaultWhite};
-    width: 35%;
+    width: 460px;
     height: 100%;
     border-radius: 5px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 490px){
+        width: 100%;
+    }
 `;
 
 export const Header = styled.header`
@@ -47,7 +56,7 @@ export const Footer = styled.footer`
 
 export const Button = styled.button`
     background-color: ${theme.primary};
-    padding: 15px 30px;
+    padding: 15px 25px;
     border: none;
     border-radius: 5px;
     font-weight: bold;

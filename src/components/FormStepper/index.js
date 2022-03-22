@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { usePlayer } from '../context';
 import PaymentForm from '../PaymentForm';
 import PurchaseSuccess from '../PurchaseSuccess';
 import StickerForm from '../StickerForm';
@@ -14,29 +15,22 @@ import {
 
 const FormStepper = () => {
 
-    const [stepIndex, setStepIndex] = useState(0);
+    const { stepIndex, nextStep, previousStep } = usePlayer();
 
     const steps = [
         {
-            title: <Title>Formulário para compra de <br/><strong>Pacote de adesivos</strong></Title>,
-            content: <StickerForm/>
+            title: <Title>Formulário para compra de <br /><strong>Pacote de adesivos</strong></Title>,
+            content: <StickerForm />
         },
         {
-            title: <Title>Escolha a <br/><strong>Forma de pagamento</strong></Title>,
-            content: <PaymentForm/>
+            title: <Title>Escolha a <br /><strong>Forma de pagamento</strong></Title>,
+            content: <PaymentForm />
         },
         {
-            title: <Title>Obrigado por escolher a  <br/><strong>BemPaggo!</strong></Title>,
-            content: <PurchaseSuccess/>
+            title: <Title>Obrigado por escolher a <strong>BemPaggo!</strong></Title>,
+            content: <PurchaseSuccess />
         }
     ]
-
-    const previousStep = () => {
-        setStepIndex(stepIndex - 1);
-    };
-    const nextStep = () => {
-        setStepIndex(stepIndex + 1);
-    };
 
     return (
         <Wrapper>
@@ -47,7 +41,7 @@ const FormStepper = () => {
                 <Content>
                     {steps[stepIndex].content}
                 </Content>
-               { stepIndex < steps.length -1 && <Footer>
+                {stepIndex < steps.length - 1 && <Footer>
                     <Button disabled={stepIndex === 0} onClick={previousStep}>Voltar</Button>
                     <Button onClick={nextStep}>Prosseguir</Button>
                 </Footer>}
@@ -56,4 +50,4 @@ const FormStepper = () => {
     )
 }
 
-export default FormStepper
+export default FormStepper;
