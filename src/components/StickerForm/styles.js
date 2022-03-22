@@ -27,9 +27,9 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-    padding: 12px;
+    padding: 10px;
     background: ${theme.defaultGrey};
-    font-size: 12px;
+    font-size: 0.8em;
     border-radius: 8px;
     border: 1px solid ${theme.primary};
 `;

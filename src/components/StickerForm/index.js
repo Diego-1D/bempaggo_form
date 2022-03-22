@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { usePlayer } from '../context';
 import {
     Container,
     Title,
@@ -10,9 +11,11 @@ import {
 
 const StickerForm = () => {
 
-    const [qtyReact, setQtyReact] = useState(0);
-    const [qtyVue, setQtyVue] = useState(0);
-    const [qtyAngular, setQtyAngular] = useState(0);
+    const {
+        qtyAngular, setQtyAngular,
+        qtyReact, setQtyReact,
+        qtyVue, setQtyVue
+    } = usePlayer();
 
     return (
         <Container>
@@ -24,18 +27,26 @@ const StickerForm = () => {
                     min={0}
                     id='react'
                     value={qtyReact}
-                    onChange={(ev) => setQtyReact(ev.value)}
+                    onChange={(e) => setQtyReact(e.target.value)}
+                    onKeyDown={(e) => {if (e.keyCode === 13) {
+                        e.preventDefault();
+                    }}}
                 >
                 </Input>
             </InputWrapper>
             <InputWrapper>
                 <Label htmlFor='vue'>Vue</Label>
                 <Input
+                tabIndex={1}
                     type='number'
                     min={0}
                     id='vue'
                     value={qtyVue}
-                    onChange={(ev) => setQtyVue(ev.value)}
+                    onChange={(e) => setQtyVue(e.target.value)}
+                    onKeyDown={(e) => {if (e.keyCode === 13) {
+                        e.preventDefault();
+                    }}}
+
                 ></Input>
             </InputWrapper>
             <InputWrapper>
@@ -45,7 +56,10 @@ const StickerForm = () => {
                     min={0}
                     id='angular'
                     value={qtyAngular}
-                    onChange={(ev) => setQtyAngular(ev.value)}
+                    onChange={(e) => setQtyAngular(e.target.value)}
+                    onKeyDown={(e) => {if (e.keyCode === 13) {
+                        e.preventDefault();
+                    }}}
                 ></Input>
             </InputWrapper>
             <Title>Observações:</Title>
