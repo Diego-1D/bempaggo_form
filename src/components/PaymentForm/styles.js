@@ -14,7 +14,7 @@ export const MethodsArea = styled.div`
     height: 1.5rem;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 1rem;
+    margin-bottom: 0.7rem;
 `;
 
 export const MethodsOption = styled.div`
@@ -23,30 +23,28 @@ export const MethodsOption = styled.div`
     align-items: center;
     padding: 1.2rem;
     border-radius: 5px;
-    gap: 0.3rem;
 `;
 
 export const Title = styled.label`
     font-size: 1em;
     font-weight: bold ;
+    margin-bottom: 5px;
 `;
 
 export const HeaderLabel = styled.p`
-    font-size: .8em;
+    font-size: 0.8em;
 `;
 
 export const InputOption = styled.input`
-   -webkit-appearance: checkbox;
+    -webkit-appearance: checkbox;
     -moz-appearance: checkbox;    
     -ms-appearance: checkbox;  
-    /* width: 15px;
-    height: 15px; */
 `;
 
 export const InputWrapper = styled.form`
     padding: 10px 0;
     display: grid;
-    grid-template-rows: 20px 1fr;
+    grid-template-rows: 15px 1fr;
 `;
 
 export const Label = styled.label`
@@ -69,7 +67,7 @@ export const CodeArea = styled.div`
     gap: 3rem;
 `;
 
-export const DivPix = styled.div`
+export const OptionArea = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
@@ -82,13 +80,12 @@ export const CartReview = styled.div`
     width: 100%;
     display: flex;
     gap: 10px;
-    padding-bottom: 10px;
     border-bottom: 1px solid grey;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 `;
 
 export const ImageQrCode = styled.img`
-    width: 200px;
+    width: 170px;
     object-fit: cover;
 `;
 

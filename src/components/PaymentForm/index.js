@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ImgQrCode from '../../assets/imgs/qrcode.svg';
-import { usePlayer } from '../context';
+import { useFormData } from '../context';
 import {
     Container,
     MethodsArea,
@@ -10,7 +10,7 @@ import {
     Label,
     Input,
     InputOption,
-    DivPix,
+    OptionArea,
     ImageQrCode,
     CopyButton,
     Title,
@@ -20,7 +20,7 @@ import {
 
 const PaymentForm = () => {
 
-    const {qtyReact, qtyVue, qtyAngular} = usePlayer();
+    const { qtyReact, qtyVue, qtyAngular } = useFormData();
     const [paymentMethod, setPaymentMethod] = useState('cartao');
     const [cardField, setCardField] = useState("8888 8888 3333 2222");
     const [nameField, setNameField] = useState("Fulando da Silva");
@@ -28,49 +28,44 @@ const PaymentForm = () => {
     const [cvvField, setCvvField] = useState("223");
     const [cpfField, setCpfField] = useState("900.099.384-88");
 
-    // const handleAddEvent = () => {
-    //     let errors = [];
-
-    //     if (cardField === "") {
-    //         errors.push("Título vazio!");
-    //     }
-    //     if (nameField === "") {
-    //         errors.push("Título vazio!");
-    //     }
-    //     if (valField === "") {
-    //         errors.push("Título vazio!");
-    //     }
-    //     if (cvvField.length !== 3) {
-    //         errors.push("Cvv inválido!");
-    //     }
-    //     if (cpfField.length !== 11) {
-    //         errors.push("CPF inválido!");
-    //     }
-    //     if (errors.length > 0) {
-    //         alert(errors.join("\n"));
-    //     }
-    // }
-
     return (
         <Container>
             <Title>Revisão do pedido:</Title>
             <CartReview>
-            
-            {qtyReact > 0 && <HeaderLabel>{`React: ${qtyReact} adesivos`}</HeaderLabel>}
-            {qtyVue > 0 &&<HeaderLabel>{`Vue: ${qtyVue} adesivos`}</HeaderLabel>}
-            {qtyAngular> 0 &&<HeaderLabel>{`Angular: ${qtyAngular} adesivos`}</HeaderLabel>}
+                {qtyReact > 0 && <HeaderLabel>{`React: ${qtyReact} adesivos`}</HeaderLabel>}
+                {qtyVue > 0 && <HeaderLabel>{`Vue: ${qtyVue} adesivos`}</HeaderLabel>}
+                {qtyAngular > 0 && <HeaderLabel>{`Angular: ${qtyAngular} adesivos`}</HeaderLabel>}
             </CartReview>
             <MethodsArea>
                 <MethodsOption>
-                    <InputOption type='radio' name='radio' value='cartao' checked={paymentMethod == 'cartao'} id='cartao' onChange={() => setPaymentMethod('cartao')} />
+                    <InputOption
+                        type='radio'
+                        name='radio'
+                        value='cartao'
+                        checked={paymentMethod === 'cartao'}
+                        id='cartao'
+                        onChange={() => setPaymentMethod('cartao')}
+                    />
                     <Label htmlFor='cartao'>Cartão</Label>
                 </MethodsOption>
                 <MethodsOption>
-                    <InputOption type='radio' name='radio' value='boleto' checked={paymentMethod == 'boleto'} id='boleto' onChange={() => setPaymentMethod('boleto')} />
+                    <InputOption
+                        type='radio'
+                        name='radio'
+                        value='boleto'
+                        checked={paymentMethod === 'boleto'}
+                        id='boleto' onChange={() => setPaymentMethod('boleto')}
+                    />
                     <Label htmlFor='boleto'>Boleto</Label>
                 </MethodsOption>
                 <MethodsOption>
-                    <InputOption type='radio' name='radio' value='pix' checked={paymentMethod == 'pix'} id='pix' onChange={() => setPaymentMethod('pix')} />
+                    <InputOption
+                        type='radio'
+                        name='radio'
+                        value='pix'
+                        checked={paymentMethod === 'pix'}
+                        id='pix'
+                        onChange={() => setPaymentMethod('pix')} />
                     <Label htmlFor='pix'>Pix</Label>
                 </MethodsOption>
             </MethodsArea>
@@ -131,21 +126,24 @@ const PaymentForm = () => {
                     </InputWrapper>
                 </>
             }
-            {/* <button onClick={handleAddEvent}>Seguir</button> */}
 
-            {paymentMethod === 'boleto' && <DivPix>
+            {paymentMethod === 'boleto' && <OptionArea>
                 <Label>Código de barra do boleto báncario a ser pago</Label>
                 <Label>24253.53684 26465.183626 973548 363729757947932</Label>
                 <CopyButton>Copiar</CopyButton>
                 <CopyButton>Visualizar boleto</CopyButton>
-            </DivPix>
+            </OptionArea>
             }
-            {paymentMethod === 'pix' && <DivPix>
-                <Label>Para realizar o pagamento, abra o aplicativo do seu banco em outro celular, escolha
-                    a opção pix e escaneie com câmera o código abaixo:
+
+            {paymentMethod === 'pix' && <OptionArea>
+                <Label>
+                    Para realizar o pagamento, abra o aplicativo do seu banco em 
+                    <br />outro celular, escolha a opção pix e escaneie com câmera 
+                    <br />o código abaixo:
                 </Label>
                 <ImageQrCode src={ImgQrCode} />
-            </DivPix>}
+            </OptionArea>}
+
         </Container >
     )
 }

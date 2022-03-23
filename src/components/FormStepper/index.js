@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { usePlayer } from '../context';
+import React from 'react';
+import { useFormData } from '../context';
 import PaymentForm from '../PaymentForm';
 import PurchaseSuccess from '../PurchaseSuccess';
 import StickerForm from '../StickerForm';
@@ -15,7 +15,7 @@ import {
 
 const FormStepper = () => {
 
-    const { stepIndex, nextStep, previousStep } = usePlayer();
+    const { stepIndex, nextStep, previousStep } = useFormData();
 
     const steps = [
         {

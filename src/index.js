@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { PlayerContextProvider } from './components/context';
+import { ContextProvider } from './components/context';
 
 ReactDOM.render(
-  <PlayerContextProvider>
+  <ContextProvider>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </PlayerContextProvider>,
+  </ContextProvider>,
   document.getElementById('root')
 );

@@ -2,15 +2,16 @@ import React from 'react'
 import congrats from '../../assets/imgs/congrats.svg'
 import {
     Container,
-
+    Label,
+    Image
 } from './styles';
 
 const PurchaseSuccess = () => {
 
     return (
         <Container>
-            Em breve sua compra chegará ao local
-           <img height='300px' src={congrats} alt="Compra realizada"/>
+            <Label>Em breve sua compra chegará ao seu local</Label>
+            <Image src={congrats} alt="Compra realizada" />
         </Container>
     )
 }

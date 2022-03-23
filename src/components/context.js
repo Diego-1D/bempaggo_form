@@ -1,8 +1,8 @@
 import { createContext, useContext, useState } from "react";
 
-export const PlayerContext = createContext({});
+export const Context = createContext({});
 
-export function PlayerContextProvider({ children }) {
+export function ContextProvider({ children }) {
 
     const [stepIndex, setStepIndex] = useState(0);
     const [qtyReact, setQtyReact] = useState(0);
@@ -11,7 +11,7 @@ export function PlayerContextProvider({ children }) {
 
     function nextStep() {
         if (qtyReact === 0 && qtyVue === 0 && qtyAngular === 0) {
-            alert("Adicione pelo menos uma quantidade adesivos!");
+            alert("Adicione pelo menos um adesivo!");
         }
         else {
             setStepIndex(stepIndex + 1);
@@ -23,7 +23,7 @@ export function PlayerContextProvider({ children }) {
     }
 
     return (
-        <PlayerContext.Provider value={{
+        <Context.Provider value={{
             stepIndex,
             nextStep,
             previousStep,
@@ -32,11 +32,11 @@ export function PlayerContextProvider({ children }) {
             qtyAngular, setQtyAngular
         }}>
             {children}
-        </PlayerContext.Provider>
+        </Context.Provider>
 
     )
 }
 
-export const usePlayer = () => {
-    return useContext(PlayerContext);
+export const useFormData = () => {
+    return useContext(Context);
 }

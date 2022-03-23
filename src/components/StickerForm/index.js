@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { usePlayer } from '../context';
+import React from 'react'
+import { useFormData } from '../context';
 import {
     Container,
     Title,
@@ -15,7 +15,7 @@ const StickerForm = () => {
         qtyAngular, setQtyAngular,
         qtyReact, setQtyReact,
         qtyVue, setQtyVue
-    } = usePlayer();
+    } = useFormData();
 
     return (
         <Container>

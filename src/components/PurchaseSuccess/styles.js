@@ -1,41 +1,20 @@
 import styled from 'styled-components';
-import { theme } from '../../theme/theme';
 
 export const Container = styled.div`
     width: 100%;
     height: 100%;
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-`;
-
-export const Title = styled.h2`
-    margin: 20px 0;
-`;
-
-export const InputWrapper = styled.form`
-    padding: 10px 0;
-    display: grid;
     align-items: center;
-    grid-template-columns: 100px 1fr;
 `;
 
 export const Label = styled.label`
-    margin-right: 10px;
+    font-size: 1.2em;
+    padding: 0.5rem 0;
 `;
 
-export const Input = styled.input`
-    padding: 12px;
-    background: ${theme.defaultGrey};
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid ${theme.primary};
+export const Image = styled.img`
+    height:300px;
 `;
 
-export const TextArea = styled.textarea`
-    padding: 12px;
-    background: ${theme.defaultGrey};
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid ${theme.primary};
-`;
