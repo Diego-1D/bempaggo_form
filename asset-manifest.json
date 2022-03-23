@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/bempaggo_form/static/js/main.0be642f2.js",
+    "static/media/congrats.svg": "/bempaggo_form/static/media/congrats.2c5932c67188d700f798c333767a9776.svg",
+    "static/media/qrcode.svg": "/bempaggo_form/static/media/qrcode.a163dfe67665a049c20cea429d3c318a.svg",
+    "static/media/banner.svg": "/bempaggo_form/static/media/banner.ce43c03e60b8483bd65aca39a37523ce.svg",
+    "index.html": "/bempaggo_form/index.html",
+    "main.0be642f2.js.map": "/bempaggo_form/static/js/main.0be642f2.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.0be642f2.js"
+  ]
+}
